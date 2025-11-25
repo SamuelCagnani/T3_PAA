@@ -53,8 +53,6 @@ O algoritmo imprime na **saída padrão (console)** o **valor mínimo necessári
 
 A solução foi implementada em **Java**, utilizando:
 
-- Estruturas de dados como **HashMap** e **ArrayList**;  
-- Leitura de dados via classe **Scanner**;  
 - Em desenvolvimento...
 
 ---
