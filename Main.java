@@ -54,6 +54,13 @@ public class Main {
 
             // Poda dos retângulos dominados
             lotes = removerDominados(lotes);
+            
+            // Só pra teste e referência de tempo
+            int cont = 0;
+            for(Lote l: lotes) {
+                cont++;   
+            }
+            System.out.println("Quantidade computada: " + cont);
 
             // Calcula custo básico do grupo (comprar tudo individualmente)
             melhorCusto = 0;
@@ -116,8 +123,8 @@ public class Main {
 
             long antes = g.custo();
 
-            int oldL = g.maxLargura;
-            int oldC = g.maxComprimento;
+            int antigaLargura = g.maxLargura;
+            int antigoComprimento = g.maxComprimento;
 
             g.maxLargura = Math.max(g.maxLargura, atual.getLargura());
             g.maxComprimento = Math.max(g.maxComprimento, atual.getComprimento());
@@ -126,8 +133,8 @@ public class Main {
 
             buscar(indice + 1, lotes, grupos, custoAtual + (depois - antes));
 
-            g.maxLargura = oldL;
-            g.maxComprimento = oldC;
+            g.maxLargura = antigaLargura;
+            g.maxComprimento = antigoComprimento;
         }
 
         Grupo novo = new Grupo(atual.getLargura(), atual.getComprimento());
